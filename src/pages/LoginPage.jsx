@@ -14,7 +14,7 @@ const LoginPage = () => {
         email,
         password,
       });
-      setToken(response.data)
+      setToken(response.data);
       navigate("/");
     } catch (error) {
       console.error("Login Error", error);
@@ -43,6 +43,13 @@ const LoginPage = () => {
           Login
         </button>
       </form>
+      <div className="register-option">
+        New user?{" "}
+        <span onClick={() => navigate("/register")} className="register-link">
+          Register here
+        </span>
+        .
+      </div>
     </div>
   );
 };

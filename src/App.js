@@ -16,6 +16,7 @@ function App() {
           <Route
             path="/"
             element={
+              // If you only want logged in/authenticated users to view a page, wrap it with the <PrivateRoute>
               <PrivateRoute>
                 <HomePage />
               </PrivateRoute>
