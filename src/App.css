@@ -34,6 +34,7 @@ body {
 }
 
 .form-button {
+  
   padding: 10px;
   background-color: #007bff;
   color: #fff;
@@ -45,4 +46,29 @@ body {
 
 .form-button:hover {
   background-color: #0056b3;
+}
+
+.navbar {
+  background-color: #2950ff;
+  padding: 1rem;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.logout-button {
+  place-self: end normal;
+  background-color: #ffffff;
+  color: #007bff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #e5e9fc;
 }
