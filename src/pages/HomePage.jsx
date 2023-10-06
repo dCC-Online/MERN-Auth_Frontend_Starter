@@ -4,12 +4,12 @@ import { useAuth } from "../context/AuthContext";
 const HomePage = () => {
   const { token, user } = useAuth();
 
-  //Open the console and see what "user" is looking like after it is decoded
-  console.log(user);
+  //Open the console and see what "token" & and the decoded "user" look like!
+  console.log("User: ",user);
+  console.log("Token: ",token);
   return (
     <div>
-      <h2>Welcome {user?.name}</h2>
-      <p>Your Token: {token}</p>
+      <h2>Welcome {user.name}</h2>
     </div>
   );
 };
