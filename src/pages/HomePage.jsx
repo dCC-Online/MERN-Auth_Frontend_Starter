@@ -9,7 +9,7 @@ const HomePage = () => {
   console.log("Token: ",token);
   return (
     <div>
-      <h2>Welcome {user.name}</h2>
+      <h2>Welcome {user?.name}</h2>
     </div>
   );
 };
