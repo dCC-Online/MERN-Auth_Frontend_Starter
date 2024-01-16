@@ -1,1 +1,1 @@
-# eCommerce_Frontend_MERN_Starter
+# MERN-Auth_Frontend_Starter
