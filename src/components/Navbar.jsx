@@ -1,27 +1,45 @@
-// Navbar.js
 import React from "react";
-import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
-const Navbar = () => {
-  const { token,setToken } = useAuth();
+import { useAuth } from "../utils/useAuth";
+import { useNavigate } from "react-router-dom";
 
-  const handleLogout = () => {
-    setToken(null)
-  };
+export default function Navbar() {
+  const navigate = useNavigate();
+  const { isAuthenticated, user, logout } = useAuth();
 
   return (
-    <div className="navbar">
-      {token ? (
-        <button className="logout-button" onClick={handleLogout}>
-          Logout
-        </button>
-      ) : (
-        <button className="logout-button" onClick={handleLogout}>
-          <Link to="/login">Login</Link>
-        </button>
-      )}
-    </div>
-  );
-};
+    <nav className="navbar">
+      <div onClick={() => navigate("/")} className="navbar-brand">
+        My Awesome App
+      </div>
 
-export default Navbar;
+      {isAuthenticated && (
+        <div className="navbar-user">Welcome, {user.username}!</div>
+      )}
+
+      <div className="navbar-links">
+        {/* Add Navbar Links here  */}
+
+        {/* <Link to="/profile" className="navbar-link">
+          Profile
+        </Link> */}
+
+        {/* If user is logged in, render Logout Button  */}
+        {isAuthenticated ? (
+          <div className="navbar-link" onClick={() => logout()}>
+            Logout
+          </div>
+        ) : (
+          <>
+            <Link to="/login" className="navbar-link">
+              Login
+            </Link>
+            <Link to="/register" className="navbar-link">
+              Register
+            </Link>
+          </>
+        )}
+      </div>
+    </nav>
+  );
+}
