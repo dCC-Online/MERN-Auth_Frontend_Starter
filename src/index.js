@@ -6,7 +6,7 @@ import App from "./App";
 
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
-import HomePage from "./Pages/HomePage/HomePage";
+import HomePage, { getCars } from "./Pages/HomePage/HomePage";
 
 import { AuthProvider } from "./utils/useAuth";
 import PrivateRoute from "./utils/PrivateRoute";
@@ -24,6 +24,7 @@ const router = createBrowserRouter([
             <HomePage />
           </PrivateRoute>
         ),
+        // loader: getCars
       },
       {
         path: "/login",
